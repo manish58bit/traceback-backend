@@ -1,4 +1,4 @@
-const User = require("../../models/User.js");
+const User = require("../../models/user.js");
 const mongoose = require("mongoose");
 const generateJwt = require("../../utils/generateJwt.js");
 
@@ -10,7 +10,7 @@ const userSignup = async (req, res) => {
       res.status(400).json({ message: "Email already exists" });
       return;
     }
-    const newuser =new User({ ...person });
+    const newuser = new User({ ...person });
     await newuser.save();
     const token = generateJwt(newuser);
     res
