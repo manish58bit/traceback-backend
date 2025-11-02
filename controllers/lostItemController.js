@@ -5,7 +5,7 @@ const allPost_lostItems = async (req, res) => {
   try {
     const posts = await PostOfLost.find()
       .populate("item")
-      .populate("user", "name email");
+      .populate("user", "name email avatar");
     res.status(200).json(posts);
   } catch (error) {
     console.log(error);
