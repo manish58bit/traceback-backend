@@ -24,6 +24,18 @@ const userSchema = mongoose.Schema({
     type: String,
     default: "",
   },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
+  resetOTP: {
+    type: String,
+    default: null,
+  },
+  resetOTPExpiry: {
+    type: Date,
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
